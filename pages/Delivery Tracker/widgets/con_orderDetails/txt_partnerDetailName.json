@@ -9,7 +9,7 @@
         "label"
     ],
     "topRow": 9,
-    "bottomRow": 14,
+    "bottomRow": 13,
     "parentRowSpace": 10,
     "type": "TEXT_WIDGET",
     "hideCard": false,
@@ -28,7 +28,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "{{lst_orders.selectedItem.PartnerName}}",
+    "text": "{{lst_orders.triggeredItem.PartnerName}}",
     "key": "arxtn3d58v",
     "isDeprecated": false,
     "rightColumn": 19,

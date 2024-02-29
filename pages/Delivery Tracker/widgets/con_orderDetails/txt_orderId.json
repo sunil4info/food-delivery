@@ -28,7 +28,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "Order #: {{lst_orders.selectedItem.OrderId}}",
+    "text": "Order #: {{lst_orders.triggeredItem.OrderId}}",
     "key": "arxtn3d58v",
     "isDeprecated": false,
     "rightColumn": 16,

@@ -46,12 +46,25 @@ export default {
 		return res;
 	},
 
-	getTrackOrders: async () => {
-		const orders = appsmith.store.orders;
-		console.log('orders---',orders);
-		console.log('OrderId---',orders.OrderId);
-
-		return orders;
+	getOrderShipmentTracking: async () => {
+		const trackings = await fetchOrderShipmentTracking.run();
+		console.log(lst_orders.triggeredItem.Id);
+		var htmlContent = '';
+		var status = '';
+		for(var i = 0; i < trackings.length; i++){
+			if(i === 0){
+				status = trackings[i].OrderStatusName;
+				htmlContent += '<b>'+status+'</b><br/><br/><span>'+trackings[i].Remarks+' on <span>'+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+'</span></span><br/><br/>';
+			}else{
+				if(trackings[i].OrderStatusName === status){
+					htmlContent += '<span>'+trackings[i].Remarks+' on '+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+'</span><br/><br/>';
+				}else{
+					status = trackings[i].OrderStatusName;
+					htmlContent += '<b>'+status+'</b><br/><br/><span>'+trackings[i].Remarks+' on '+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+'</span><br/><br/>';
+				}
+			}
+		}
+		return htmlContent;
 	},
 
 	getCoords: async () => {

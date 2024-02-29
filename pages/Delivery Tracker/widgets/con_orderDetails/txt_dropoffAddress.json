@@ -28,7 +28,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "{{lst_orders.selectedItem.DropoffAddress}}",
+    "text": "{{lst_orders.triggeredItem.DropoffAddress}}",
     "key": "arxtn3d58v",
     "isDeprecated": false,
     "rightColumn": 63,

@@ -29,7 +29,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "{{lst_orders.selectedItem.CustomerPhone}}",
+    "text": "{{lst_orders.triggeredItem.CustomerPhone}}",
     "key": "arxtn3d58v",
     "isDeprecated": false,
     "rightColumn": 60,

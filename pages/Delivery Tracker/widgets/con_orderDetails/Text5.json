@@ -30,7 +30,7 @@
     "shouldTruncate": false,
     "borderWidth": "6",
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "{{lst_orders.selectedItem.Status}}",
+    "text": "{{lst_orders.triggeredItem.Status}}",
     "key": "arxtn3d58v",
     "isDeprecated": false,
     "rightColumn": 64,

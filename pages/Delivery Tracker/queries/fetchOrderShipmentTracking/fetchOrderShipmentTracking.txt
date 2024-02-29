@@ -1,0 +1,4 @@
+SELECT OST.*, OS."OrderStatusName" FROM public."OrderShipmentTrackings" as OST
+LEFT JOIN public."OrderStatuses" as OS ON OST."OrderStatusId" = OS."OrderStatusId"
+where OST."OrderId" = {{lst_orders.triggeredItem.Id}}
+ORDER BY "OrderShipmentTrackingId" ASC 

@@ -26,7 +26,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "Track Order - {{lst_orders.selectedItem.OrderId}}<hr/>",
+    "text": "Track Order - {{lst_orders.triggeredItem.OrderId}}<hr/>",
     "key": "k584wes39q",
     "isDeprecated": false,
     "rightColumn": 57,

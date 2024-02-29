@@ -53,6 +53,19 @@
           ],
           [
             {
+              "id": "Delivery Tracker_utils.getOrderShipmentTracking",
+              "name": "utils.getOrderShipmentTracking",
+              "collectionId": "Delivery Tracker_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const trackings = await fetchOrderShipmentTracking.run();\n  console.log(lst_orders.triggeredItem.Id);\n  var htmlContent = '';\n  var status = '';\n  for (var i = 0; i < trackings.length; i++) {\n    if (i === 0) {\n      status = trackings[i].OrderStatusName;\n      htmlContent += '<b>' + status + '</b><br/><br/><span>' + trackings[i].Remarks + ' on <span>' + new Date(trackings[i].TrackingUpdateDateTime).toDateString() + '</span></span><br/><br/>';\n    } else {\n      if (trackings[i].OrderStatusName === status) {\n        htmlContent += '<span>' + trackings[i].Remarks + ' on ' + new Date(trackings[i].TrackingUpdateDateTime).toDateString() + '</span><br/><br/>';\n      } else {\n        status = trackings[i].OrderStatusName;\n        htmlContent += '<b>' + status + '</b><br/><br/><span>' + trackings[i].Remarks + ' on ' + new Date(trackings[i].TrackingUpdateDateTime).toDateString() + '</span><br/><br/>';\n      }\n    }\n  }\n  return htmlContent;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
               "id": "Delivery Tracker_utils.poolCoords",
               "name": "utils.poolCoords",
               "collectionId": "Delivery Tracker_utils",

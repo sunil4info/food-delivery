@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getTrackOrders",
-    "fullyQualifiedName": "utils.getTrackOrders",
+    "name": "getOrderShipmentTracking",
+    "fullyQualifiedName": "utils.getOrderShipmentTracking",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -22,7 +22,7 @@
       "selfReferencingDataPaths": [],
       "jsArguments": []
     },
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -34,9 +34,10 @@
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
-    "userPermissions": []
+    "userPermissions": [],
+    "createdAt": "2024-02-29T09:58:12Z"
   },
-  "id": "Delivery Tracker_utils.getTrackOrders",
+  "id": "Delivery Tracker_utils.getOrderShipmentTracking",
   "deleted": false,
   "gitSyncId": "65d85e696601643d99bd64ee_65e055346601643d99bd66bc"
 }

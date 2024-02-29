@@ -8,8 +8,8 @@
         "paragraph",
         "label"
     ],
-    "topRow": 5,
-    "bottomRow": 9,
+    "topRow": 7,
+    "bottomRow": 35,
     "parentRowSpace": 10,
     "type": "TEXT_WIDGET",
     "hideCard": false,
@@ -23,11 +23,12 @@
     "dynamicBindingPathList": [
         {"key": "truncateButtonColor"},
         {"key": "fontFamily"},
-        {"key": "borderRadius"}
+        {"key": "borderRadius"},
+        {"key": "text"}
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "Order Confirmed",
+    "text": "{{utils.getOrderShipmentTracking.data}}",
     "key": "298dljvlz4",
     "isDeprecated": false,
     "rightColumn": 63,
@@ -36,7 +37,7 @@
     "widgetId": "3gbz7sotg1",
     "minWidth": 450,
     "isVisible": true,
-    "fontStyle": "BOLD",
+    "fontStyle": "",
     "textColor": "#231F20",
     "version": 1,
     "parentId": "nagr0vtp09",
@@ -52,7 +53,7 @@
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 1,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 9,
+    "originalBottomRow": 16,
     "fontSize": "1rem",
     "minDynamicHeight": 4
 }
