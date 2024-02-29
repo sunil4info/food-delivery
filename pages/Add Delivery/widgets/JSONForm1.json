@@ -3,7 +3,7 @@
     "borderColor": "#E0DEDE",
     "iconSVG": "/static/media/icon.46adf7030d667f0ad9002aa31f997573.svg",
     "onSubmit": "{{utils.addDelivery();}}",
-    "topRow": 6,
+    "topRow": 16,
     "type": "JSON_FORM_WIDGET",
     "animateLoading": true,
     "leftColumn": 0,
@@ -160,7 +160,7 @@
     },
     "disabledWhenInvalid": true,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-    "originalBottomRow": 45,
+    "originalBottomRow": 135,
     "useSourceData": false,
     "schema": {"__root_schema__": {
         "labelTextSize": "0.875rem",
@@ -204,44 +204,46 @@
                 "identifier": "driver_id",
                 "boxShadow": "none",
                 "isRequired": false,
+                "isFilterable": false,
                 "isCustomField": false,
                 "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.driver_id))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
                 "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
                 "dataType": "string",
                 "accessor": "driver_id",
                 "isVisible": true,
-                "label": "Driver Id",
+                "label": "Driver",
+                "serverSideFiltering": false,
                 "originalIdentifier": "driver_id",
                 "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
                 "children": {},
-                "isSpellCheck": false,
-                "iconAlign": "left",
+                "options": "[\n  {\n    \"label\": \"John Smith\",\n    \"value\": \"1\"\n  },\n  {\n    \"label\": \"Jane Doe\",\n    \"value\": \"2\"\n  },\n  {\n    \"label\": \"David Kim\",\n    \"value\": \"3\"\n  },\n  {\n    \"label\": \"Samantha Lee\",\n    \"value\": \"4\"\n  }\n]",
                 "position": 12,
                 "isDisabled": false,
                 "sourceData": "",
-                "fieldType": "Text Input"
+                "fieldType": "Select"
             },
             "restaurant_id": {
                 "labelTextSize": "0.875rem",
                 "identifier": "restaurant_id",
                 "boxShadow": "none",
                 "isRequired": false,
+                "isFilterable": false,
                 "isCustomField": false,
                 "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.restaurant_id))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
                 "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
                 "dataType": "string",
                 "accessor": "restaurant_id",
                 "isVisible": true,
-                "label": "Restaurant Id",
+                "label": "Restaurant",
+                "serverSideFiltering": false,
                 "originalIdentifier": "restaurant_id",
                 "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
                 "children": {},
-                "isSpellCheck": false,
-                "iconAlign": "left",
+                "options": "[\n  {\n    \"label\": \"Franklin Barbecue\",\n    \"value\": \"1\"\n  },\n  {\n    \"label\": \"Uchi\",\n    \"value\": \"2\"\n  },\n  {\n    \"label\": \"Veracruz All Natural\",\n    \"value\": \"3\"\n  }\n]",
                 "position": 13,
                 "isDisabled": false,
                 "sourceData": "",
-                "fieldType": "Text Input"
+                "fieldType": "Select"
             },
             "created": {
                 "labelTextSize": "0.875rem",
@@ -373,7 +375,7 @@
                 "position": 10,
                 "isDisabled": false,
                 "sourceData": "",
-                "fieldType": "Text Input"
+                "fieldType": "Number Input"
             },
             "total": {
                 "labelTextSize": "0.875rem",
@@ -395,7 +397,7 @@
                 "position": 11,
                 "isDisabled": false,
                 "sourceData": "",
-                "fieldType": "Text Input"
+                "fieldType": "Number Input"
             },
             "eta": {
                 "labelTextSize": "0.875rem",
@@ -540,7 +542,7 @@
     },
     "dynamicPropertyPathList": [{"key": "sourceData"}],
     "displayName": "JSON Form",
-    "bottomRow": 125,
+    "bottomRow": 135,
     "fieldLimitExceeded": false,
     "parentRowSpace": 10,
     "title": "",
@@ -579,7 +581,7 @@
     "scrollContents": true,
     "responsiveBehavior": "fill",
     "fixedFooter": true,
-    "originalTopRow": 6,
+    "originalTopRow": 16,
     "mobileLeftColumn": 0,
     "maxDynamicHeight": 9000,
     "minDynamicHeight": 4
