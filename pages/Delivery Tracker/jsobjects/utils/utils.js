@@ -94,11 +94,11 @@ export default {
 	},
 
 	poolCoords: async () => {
-		setInterval(async () => {
-			const coords = await this.getCoords();
-			storeValue('mapCoords', coords)
-			console.log('coords pulled')
-		}, 5000);
+		//setInterval(async () => {
+		const coords = await this.getCoords();
+		storeValue('mapCoords', coords)
+		console.log('coords pulled')
+		//}, 5000);
 	},
 
 	configureCoords: async () => {
@@ -117,15 +117,15 @@ export default {
 
 		let index = 0;
 
-		setInterval(() => {
-			if (index < coordinates.length) {
-				storeValue('mapCoords', {
-					lat: coordinates[index][0],
-					long: coordinates[index][1],
-					title: 'Marker'
-				})
-				index++;
-			}
-		}, 1000)
+		//setInterval(() => {
+		if (index < coordinates.length) {
+			storeValue('mapCoords', {
+				lat: coordinates[index][0],
+				long: coordinates[index][1],
+				title: 'Marker'
+			})
+			index++;
+		}
+		//}, 1000)
 	},
 }

@@ -3,7 +3,7 @@
     "boxShadow": "none",
     "mobileBottomRow": 5,
     "widgetName": "btnTrackOrder",
-    "onClick": "{{showModal('mdlTrackOrder');}}",
+    "onClick": "{{showModal('mdlTrackOrder');\nutils.getOrderShipmentTracking();}}",
     "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
     "dynamicPropertyPathList": [],
     "displayName": "Button",

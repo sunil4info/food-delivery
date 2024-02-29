@@ -40,7 +40,7 @@
     "parentColumnSpace": 18.03125,
     "dynamicTriggerPathList": [{"key": "onOptionChange"}],
     "labelPosition": "Top",
-    "sourceData": "[\n{\n    \"label\": \"Unassigned\",\n    \"value\": \"Unassigned\"\n  },\n\t{\n    \"label\": \"Assigned\",\n    \"value\": \"Assigned\"\n  },\n\t{\n    \"label\": \"Arrived\",\n    \"value\": \"Arrived\"\n  },\n\t{\n    \"label\": \"Picked Order\",\n    \"value\": \"Picked Order\"\n  },\n  {\n    \"label\": \"In Transit\",\n    \"value\": \"In Transit\"\n  },\n  {\n    \"label\": \"Late\",\n    \"value\": \"Late\"\n  },\n  {\n    \"label\": \"Completed\",\n    \"value\": \"Completed\"\n  }\n]",
+    "sourceData": "[\n{\n    \"label\": \"Unassigned\",\n    \"value\": \"Unassigned\"\n  },\n\t{\n    \"label\": \"Assigned\",\n    \"value\": \"Assigned\"\n  },\n\t{\n    \"label\": \"Arrived\",\n    \"value\": \"Arrived\"\n  },\n\t{\n    \"label\": \"Picked Order\",\n    \"value\": \"Picked Order\"\n  },\n  {\n    \"label\": \"In Transit\",\n    \"value\": \"In Transit\"\n  },\n  {\n    \"label\": \"Late\",\n    \"value\": \"Late\"\n  },\n  {\n    \"label\": \"Completed\",\n    \"value\": \"Completed\"\n  },\n  {\n    \"label\": \"Cancelled\",\n    \"value\": \"Cancelled\"\n  }\n]",
     "key": "m9ishc5dq6",
     "labelTextSize": "0.875rem",
     "isDeprecated": false,

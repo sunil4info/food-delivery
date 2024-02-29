@@ -35,7 +35,7 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  const coordinates = [[30.2676, -97.74298], [30.2674, -97.74245], [30.2672, -97.74192], [30.2669, -97.74137], [30.2666, -97.74082], [30.2664, -97.74027], [30.2662, -97.73972], [30.2659, -97.73917], [30.2656, -97.73862], [30.2654, -97.73807]];\n  let index = 0;\n  setInterval(() => {\n    if (index < coordinates.length) {\n      storeValue('mapCoords', {\n        lat: coordinates[index][0],\n        long: coordinates[index][1],\n        title: 'Marker'\n      });\n      index++;\n    }\n  }, 1000);\n}"
+                "async () => {\n  const coordinates = [[30.2676, -97.74298], [30.2674, -97.74245], [30.2672, -97.74192], [30.2669, -97.74137], [30.2666, -97.74082], [30.2664, -97.74027], [30.2662, -97.73972], [30.2659, -97.73917], [30.2656, -97.73862], [30.2654, -97.73807]];\n  let index = 0;\n  if (index < coordinates.length) {\n    storeValue('mapCoords', {\n      lat: coordinates[index][0],\n      long: coordinates[index][1],\n      title: 'Marker'\n    });\n    index++;\n  }\n}"
               ],
               "timeoutInMillisecond": 10000
             },
@@ -53,26 +53,13 @@
           ],
           [
             {
-              "id": "Delivery Tracker_utils.getOrderShipmentTracking",
-              "name": "utils.getOrderShipmentTracking",
-              "collectionId": "Delivery Tracker_utils",
-              "confirmBeforeExecute": false,
-              "pluginType": "JS",
-              "jsonPathKeys": [
-                "async () => {\n  const trackings = await fetchOrderShipmentTracking.run();\n  console.log(lst_orders.triggeredItem.Id);\n  var htmlContent = '';\n  var status = '';\n  for (var i = 0; i < trackings.length; i++) {\n    if (i === 0) {\n      status = trackings[i].OrderStatusName;\n      htmlContent += '<b>' + status + '</b><br/><br/><span>' + trackings[i].Remarks + ' on <span>' + new Date(trackings[i].TrackingUpdateDateTime).toDateString() + '</span></span><br/><br/>';\n    } else {\n      if (trackings[i].OrderStatusName === status) {\n        htmlContent += '<span>' + trackings[i].Remarks + ' on ' + new Date(trackings[i].TrackingUpdateDateTime).toDateString() + '</span><br/><br/>';\n      } else {\n        status = trackings[i].OrderStatusName;\n        htmlContent += '<b>' + status + '</b><br/><br/><span>' + trackings[i].Remarks + ' on ' + new Date(trackings[i].TrackingUpdateDateTime).toDateString() + '</span><br/><br/>';\n      }\n    }\n  }\n  return htmlContent;\n}"
-              ],
-              "timeoutInMillisecond": 10000
-            }
-          ],
-          [
-            {
               "id": "Delivery Tracker_utils.poolCoords",
               "name": "utils.poolCoords",
               "collectionId": "Delivery Tracker_utils",
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  setInterval(async () => {\n    const coords = await utils.getCoords();\n    storeValue('mapCoords', coords);\n    console.log('coords pulled');\n  }, 5000);\n}"
+                "async () => {\n  const coords = await utils.getCoords();\n  storeValue('mapCoords', coords);\n  console.log('coords pulled');\n}"
               ],
               "timeoutInMillisecond": 10000
             }
