@@ -1,0 +1,1 @@
+DELETE FROM public.restaurant_cuisine WHERE restaurant_id = {{tbl_partners.triggeredRow.Id}};

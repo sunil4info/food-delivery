@@ -1,0 +1,11 @@
+INSERT INTO restaurant
+  (name, address, email, phone)
+VALUES
+  (
+    {{ inp_newName.text }},
+    {{ inp_newAddress.text }},
+    {{ inp_newEmail.text }},
+		{{ inp_newPhone.text }}
+  )
+	RETURNING*;
+	

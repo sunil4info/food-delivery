@@ -1,0 +1,4 @@
+SELECT delivery_order.*, dd.fullname AS driver_name, dd.image AS driver_image, dd.phone AS driver_phone, dd.location_lat AS driver_lat, dd.location_long AS driver_long, r.name AS partner_name, r.location_lat AS partner_lat, r.location_long AS partner_long
+FROM public.delivery_order
+LEFT JOIN public.delivery_driver dd ON delivery_order.driver_id = dd.id
+LEFT JOIN public.restaurant r ON delivery_order.restaurant_id = r.id;

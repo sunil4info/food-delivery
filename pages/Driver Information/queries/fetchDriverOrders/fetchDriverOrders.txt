@@ -1,0 +1,1 @@
+SELECT * FROM delivery_order WHERE delivery_order.driver_id = {{tbl_drivers.triggeredRow.ID || 1}};

@@ -1,0 +1,2 @@
+SELECT emailid,name FROM public.users
+where emailid = {{inputEmail.text.toLowerCase()}} and password = {{inputPassword.text}}

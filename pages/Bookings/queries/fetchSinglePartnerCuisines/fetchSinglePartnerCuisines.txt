@@ -1,0 +1,5 @@
+SELECT rc.id AS id, r.id AS restaurant_id, r.name AS restaurant_name, c.name AS cuisine_name, c.id AS cuisine_id
+FROM public.restaurant_cuisine rc
+INNER JOIN public.restaurant r ON r.id = rc.restaurant_id
+INNER JOIN public.cuisine c ON c.id = rc.cuisine_id
+WHERE restaurant_id = {{appsmith.store.partner.Id}}

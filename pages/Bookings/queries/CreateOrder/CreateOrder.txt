@@ -1,0 +1,11 @@
+INSERT INTO delivery_order
+  (customer, customer_phone, pickup_address, dropoff_address,order_lat,order_long,status,eta,delivery_time,review,no_of_items,total,driver_id,restaurant_id)
+VALUES
+  (
+    {{ inp_newName.text }},
+    {{ inp_newAddress.text }},
+    {{ inp_newEmail.text }},
+		{{ inp_newPhone.text }}
+  )
+	RETURNING*;
+	

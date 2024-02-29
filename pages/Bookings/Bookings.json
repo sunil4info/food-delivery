@@ -1,0 +1,81 @@
+{
+  "unpublishedPage": {
+    "name": "Bookings",
+    "slug": "bookings",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 960,
+          "containerStyle": "none",
+          "snapRows": 84,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 87,
+          "minHeight": 860,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Bookings_utils.getAllCuisines",
+              "name": "utils.getAllCuisines",
+              "collectionId": "Bookings_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const cuisines = await GetCuisine.run();\n  return cuisines.map(c => {\n    return {\n      label: c.name,\n      value: c.id\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Bookings_utils.getOrders",
+              "name": "utils.getOrders",
+              "collectionId": "Bookings_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const allOrders = await fetchOrdersQuery.run();\n  return allOrders.map(r => {\n    return {\n      Partner: r.partner_name,\n      Restaurant: r.restaurant_name,\n      Customer: r.customer,\n      Id: r.id,\n      Phone: r.phone,\n      PickupAddrs: r.pickup_address,\n      DropOffAddres: r.dropoff_address\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Bookings_utils.getPartnerCuisines",
+              "name": "utils.getPartnerCuisines",
+              "collectionId": "Bookings_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const partnerCuisines = await GetSinglePartnerCuisines.run();\n  return partnerCuisines;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Bookings",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "65d85e696601643d99bd64ee_65ddbb3a6601643d99bd6573"
+}

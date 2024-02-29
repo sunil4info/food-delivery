@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "utils",
+    "pageId": "Driver Information",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Driver Information_utils",
+  "deleted": false,
+  "gitSyncId": "65d85e696601643d99bd64ee_65d85f246601643d99bd6524"
+}

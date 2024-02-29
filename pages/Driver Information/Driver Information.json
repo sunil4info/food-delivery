@@ -1,0 +1,94 @@
+{
+  "unpublishedPage": {
+    "name": "Driver Information",
+    "slug": "driver-information",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1000,
+          "containerStyle": "none",
+          "snapRows": 84,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 87,
+          "minHeight": 860,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Driver Information_utils.getDeliveryZones",
+              "name": "utils.getDeliveryZones",
+              "collectionId": "Driver Information_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const deliveryZones = await GetDeliveryZone.run();\n  return deliveryZones.map(v => {\n    return {\n      label: v.zone,\n      value: v.id\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Driver Information_utils.getDriverOrders",
+              "name": "utils.getDriverOrders",
+              "collectionId": "Driver Information_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const driverOrders = await GetDriverOrders.run();\n  return driverOrders.map(o => {\n    return {\n      Id: o.id,\n      Time: new Date(o.created).toLocaleTimeString(),\n      Name: o.customer,\n      Address: o.pickup_address,\n      Status: o.status,\n      Rating: o.review\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Driver Information_utils.getVehicles",
+              "name": "utils.getVehicles",
+              "collectionId": "Driver Information_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const vehicles = await GetVehicleType.run();\n  return vehicles.map(v => {\n    return {\n      label: v.type,\n      value: v.id\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Driver Information_utils.getDrivers",
+              "name": "utils.getDrivers",
+              "collectionId": "Driver Information_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const allDrivers = await GetDrivers.run();\n  const status = sel_driverStatus.selectedOptionValue;\n  let filteredDriver = allDrivers;\n  if (status) {\n    const filteredData = allDrivers.filter(d => d.status === status);\n    filteredDriver = filteredData;\n  }\n  return filteredDriver.map(m => {\n    return {\n      DriverID: `D00${m.id}`,\n      ID: m.id,\n      Photo: m.image,\n      Name: m.fullname,\n      Phone: m.phone,\n      Address: m.address,\n      Email: m.email,\n      DeliveryCommission: m.commission,\n      Vehicle: m.vehicle_type,\n      Status: m.status\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Driver Information",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "65d85e696601643d99bd64ee_65d85f246601643d99bd64fa"
+}

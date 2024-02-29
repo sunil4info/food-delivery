@@ -1,0 +1,10 @@
+UPDATE public.restaurant
+SET name = {{inp_name.text }},
+    address = {{inp_address.text}},
+    email = {{inp_email.text}},
+    phone = {{inp_phone.text}},
+    commission = {{inp_commission.text / 100}},
+    prep_time = {{inp_prepTime.text}},
+    delivery_radius = {{inp_deliveryRadius.text}},
+    max_delivery_time = {{inp_maxDeliveryTime.text}}
+WHERE id = {{tbl_partners.triggeredRow.Id}};

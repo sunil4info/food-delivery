@@ -1,0 +1,82 @@
+{
+  "pages": [
+    {
+      "id": "Delivery Tracker",
+      "isDefault": true
+    },
+    {
+      "id": "Restaurant Partners",
+      "isDefault": false
+    },
+    {
+      "id": "Driver Information",
+      "isDefault": false
+    },
+    {
+      "id": "Home",
+      "isDefault": false
+    },
+    {
+      "id": "ProductDetail",
+      "isDefault": false
+    },
+    {
+      "id": "Cart",
+      "isDefault": false
+    },
+    {
+      "id": "DeliveryHomePage",
+      "isDefault": false
+    },
+    {
+      "id": "TrackConsignment",
+      "isDefault": false
+    },
+    {
+      "id": "Bookings",
+      "isDefault": false
+    },
+    {
+      "id": "Login",
+      "isDefault": false
+    },
+    {
+      "id": "SignUp",
+      "isDefault": false
+    },
+    {
+      "id": "User",
+      "isDefault": false
+    },
+    {
+      "id": "VehicleType",
+      "isDefault": false
+    },
+    {
+      "id": "Delivery Zone",
+      "isDefault": false
+    },
+    {
+      "id": "Add Delivery",
+      "isDefault": false
+    }
+  ],
+  "viewMode": false,
+  "appIsExample": false,
+  "unreadCommentThreads": 0,
+  "color": "#FFDEDE",
+  "icon": "saturn",
+  "unpublishedAppLayout": {
+    "type": "TABLET_LARGE"
+  },
+  "publishedAppLayout": {
+    "type": "TABLET_LARGE"
+  },
+  "unpublishedCustomJSLibs": [],
+  "publishedCustomJSLibs": [],
+  "evaluationVersion": 2,
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "isManualUpdate": false,
+  "deleted": false
+}

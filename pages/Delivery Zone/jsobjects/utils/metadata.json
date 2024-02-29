@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "utils",
+    "pageId": "Delivery Zone",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Delivery Zone_utils",
+  "deleted": false,
+  "gitSyncId": "65d85e696601643d99bd64ee_65df171c6601643d99bd6681"
+}

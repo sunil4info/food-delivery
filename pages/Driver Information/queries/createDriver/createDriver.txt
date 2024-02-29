@@ -1,0 +1,16 @@
+INSERT INTO delivery_driver
+  (fullname, email, address, date_of_birth, phone, license_plate, commission, image, vehicle_type_id, status)
+VALUES
+  (
+    {{ inp_fullName.text }},
+    {{ inp_email.text }},
+    {{ inp_address.text }},
+		{{ dat_dob.formattedDate }},
+		{{ inp_phone.text }},
+		{{ inp_license.text }},
+		{{ parseInt(inp_commission.text) }},
+		{{ this.params.image }},
+		{{ sel_vehicleType.selectedOptionValue }},
+		'Inactive'
+  )
+	RETURNING id;

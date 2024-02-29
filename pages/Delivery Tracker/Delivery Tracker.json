@@ -1,0 +1,82 @@
+{
+  "unpublishedPage": {
+    "name": "Delivery Tracker",
+    "slug": "delivery-tracker",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 4896,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1010,
+          "containerStyle": "none",
+          "snapRows": 124,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 87,
+          "minHeight": 1292,
+          "dynamicTriggerPathList": [],
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Delivery Tracker_utils.configureCoords",
+              "name": "utils.configureCoords",
+              "collectionId": "Delivery Tracker_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const coordinates = [[30.2676, -97.74298], [30.2674, -97.74245], [30.2672, -97.74192], [30.2669, -97.74137], [30.2666, -97.74082], [30.2664, -97.74027], [30.2662, -97.73972], [30.2659, -97.73917], [30.2656, -97.73862], [30.2654, -97.73807]];\n  let index = 0;\n  setInterval(() => {\n    if (index < coordinates.length) {\n      storeValue('mapCoords', {\n        lat: coordinates[index][0],\n        long: coordinates[index][1],\n        title: 'Marker'\n      });\n      index++;\n    }\n  }, 1000);\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Delivery Tracker_utils.getOrders",
+              "name": "utils.getOrders",
+              "collectionId": "Delivery Tracker_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const orders = await fetchOrdersQuery.run();\n  const status = sel_status.selectedOptionValue;\n  const date = dat_date.formattedDate;\n  let filteredOrders = orders;\n  if (status && status.length > 0) {\n    filteredOrders = orders.filter(o => o.status === status);\n  }\n  if (date) {\n    filteredOrders = orders.filter(o => new Date(o.created) === new Date(date));\n  }\n  const res = filteredOrders.map(o => {\n    return {\n      Id: o.id,\n      OrderId: `OR00${o.id}`,\n      PartnerName: o.partner_name,\n      DropoffAddress: o.dropoff_address,\n      PickupAddress: o.pickup_address,\n      ETA: o.eta,\n      Status: o.status,\n      Driver: o.driver_name,\n      Time: new Date(o.created).toLocaleTimeString(),\n      OrderTime: new Date(o.created).toDateString(),\n      Image: o.driver_image,\n      NoOfItems: o.no_of_items,\n      DriverPhone: o.driver_phone,\n      Review: o.review,\n      CustomerName: o.customer,\n      CustomerPhone: o.customer_phone,\n      Actual: o.delivery_time,\n      PartnerLat: o.partner_lat,\n      PartnerLong: o.partner_long,\n      DriverLat: o.driver_lat,\n      DriverLong: o.driver_long,\n      OrderLong: o.order_long,\n      OrderLat: o.order_lat\n    };\n  });\n  storeValue('orders', res);\n  return res;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Delivery Tracker_utils.poolCoords",
+              "name": "utils.poolCoords",
+              "collectionId": "Delivery Tracker_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  setInterval(async () => {\n    const coords = await utils.getCoords();\n    storeValue('mapCoords', coords);\n    console.log('coords pulled');\n  }, 5000);\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Delivery Tracker",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "65d85e696601643d99bd64ee_65d85f246601643d99bd64f6"
+}

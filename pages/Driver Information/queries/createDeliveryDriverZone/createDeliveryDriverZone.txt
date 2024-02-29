@@ -1,0 +1,7 @@
+INSERT INTO delivery_driver_zone
+  (delivery_driver_id, delivery_zone_id)
+VALUES
+  (
+    {{ this.params.driverId }},
+    {{ this.params.deliveryZoneId }}
+  );

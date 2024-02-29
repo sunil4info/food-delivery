@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "utils",
+    "pageId": "Add Delivery",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Add Delivery_utils",
+  "deleted": false,
+  "gitSyncId": "65d85e696601643d99bd64ee_65df20216601643d99bd66b0"
+}

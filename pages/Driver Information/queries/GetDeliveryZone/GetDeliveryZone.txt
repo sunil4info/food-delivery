@@ -1,0 +1,1 @@
+SELECT * FROM delivery_zone ORDER BY id LIMIT 10;

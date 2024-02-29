@@ -1,0 +1,19 @@
+SELECT 
+    r.id,
+    r.name,
+    r.address,
+    r.email,
+    r.phone,
+    r.commission,
+    r.prep_time,
+    r.delivery_radius,
+    r.max_delivery_time,
+    COUNT(d.id) AS order_count,
+    COALESCE(SUM(d.total), 0) AS revenue,
+    COALESCE(AVG(d.review), 0) AS review
+FROM 
+    public.restaurant r
+LEFT JOIN 
+    public.delivery_order d ON r.id = d.restaurant_id
+GROUP BY 
+    r.id;

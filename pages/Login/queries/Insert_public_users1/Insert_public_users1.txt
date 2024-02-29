@@ -1,0 +1,1 @@
+INSERT INTO public.users ("emailid","name","phone","city","password","created") VALUES ('{{(JSONForm1.formData || {}).emailid}}','{{(JSONForm1.formData || {}).name}}','{{(JSONForm1.formData || {}).phone}}','{{(JSONForm1.formData || {}).city}}','{{(JSONForm1.formData || {}).password}}','{{(JSONForm1.formData || {}).created}}')

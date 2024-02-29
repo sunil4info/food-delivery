@@ -1,0 +1,2 @@
+INSERT INTO public.restaurant_cuisine (restaurant_id, cuisine_id)
+VALUES ({{this.params.restaurantId}}, {{this.params.cuisineId}});;

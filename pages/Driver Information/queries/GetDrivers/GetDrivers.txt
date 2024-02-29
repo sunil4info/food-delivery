@@ -1,0 +1,9 @@
+SELECT 
+    delivery_driver.*, 
+    vehicle_type.type AS vehicle_type
+FROM 
+    public.delivery_driver 
+JOIN 
+    public.vehicle_type 
+ON 
+    delivery_driver.vehicle_type_id = vehicle_type.id;

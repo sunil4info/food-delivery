@@ -1,0 +1,81 @@
+{
+  "unpublishedPage": {
+    "name": "Restaurant Partners",
+    "slug": "restaurant-partners",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 960,
+          "containerStyle": "none",
+          "snapRows": 84,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 87,
+          "minHeight": 860,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Restaurant Partners_utils.getAllCuisines",
+              "name": "utils.getAllCuisines",
+              "collectionId": "Restaurant Partners_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const cuisines = await GetCuisine.run();\n  return cuisines.map(c => {\n    return {\n      label: c.name,\n      value: c.id\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Restaurant Partners_utils.getPartners",
+              "name": "utils.getPartners",
+              "collectionId": "Restaurant Partners_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const allRestaurants = await GetRestaurants.run();\n  const allCuisines = await GetPartnerCuisines.run();\n  return allRestaurants.map(r => {\n    return {\n      PartnerID: `P00${r.id}`,\n      Id: r.id,\n      Name: r.name,\n      Phone: r.phone,\n      Address: r.address,\n      Email: r.email,\n      Category: allCuisines.filter(c => c.restaurant_id === r.id).map(c => c.cuisine_name),\n      DeliveryCommission: r.commission,\n      Revenue: r.revenue,\n      Review: r.review,\n      PrepTime: r.prep_time,\n      MaxDeliveryTime: r.max_delivery_time,\n      DeliveryRadius: r.delivery_radius\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Restaurant Partners_utils.getPartnerCuisines",
+              "name": "utils.getPartnerCuisines",
+              "collectionId": "Restaurant Partners_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const partnerCuisines = await GetSinglePartnerCuisines.run();\n  return partnerCuisines;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Restaurant Partners",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "65d85e696601643d99bd64ee_65d85f246601643d99bd64f8"
+}
