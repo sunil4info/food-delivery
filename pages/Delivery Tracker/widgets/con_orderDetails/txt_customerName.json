@@ -20,7 +20,7 @@
     "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
     "parentColumnSpace": 12.6474609375,
     "dynamicTriggerPathList": [],
-    "leftColumn": 44,
+    "leftColumn": 45,
     "dynamicBindingPathList": [
         {"key": "truncateButtonColor"},
         {"key": "fontFamily"},
@@ -32,7 +32,7 @@
     "text": "{{lst_orders.triggeredItem.CustomerName}}",
     "key": "arxtn3d58v",
     "isDeprecated": false,
-    "rightColumn": 60,
+    "rightColumn": 61,
     "textAlign": "LEFT",
     "dynamicHeight": "FIXED",
     "widgetId": "7onayc381w",

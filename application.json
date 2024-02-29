@@ -2,7 +2,7 @@
   "pages": [
     {
       "id": "Delivery Tracker",
-      "isDefault": true
+      "isDefault": false
     },
     {
       "id": "Restaurant Partners",
@@ -38,7 +38,7 @@
     },
     {
       "id": "Login",
-      "isDefault": false
+      "isDefault": true
     },
     {
       "id": "SignUp",
