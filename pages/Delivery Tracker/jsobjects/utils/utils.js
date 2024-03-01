@@ -54,13 +54,13 @@ export default {
 		for(var i = 0; i < trackings.length; i++){
 			if(i === 0){
 				status = trackings[i].OrderStatusName;
-				htmlContent += '<b><u>'+status+'</u></b><br/><br/><span style="border:1px solid light-grey">'+trackings[i].Remarks+' on <span><b>'+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+'</b></span></span><br/><br/>';
+				htmlContent += '<b><u>'+status+'</u></b><br/><br/><span style="border:1px solid light-grey">'+trackings[i].Remarks+' on <span><b>'+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+ ' '+new Date(trackings[i].TrackingUpdateDateTime).toLocaleTimeString()+ '</b></span></span><br/><br/>';
 			}else{
 				if(trackings[i].OrderStatusName === status){
-					htmlContent += '<span>'+trackings[i].Remarks+' on <b>'+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+'</b></span><br/><br/>';
+					htmlContent += '<span>'+trackings[i].Remarks+' on <b>'+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+ ' '+new Date(trackings[i].TrackingUpdateDateTime).toLocaleTimeString()+ '</b></span><br/><br/>';
 				}else{
 					status = trackings[i].OrderStatusName;
-					htmlContent += '<b><u>'+status+'</u></b><br/><br/><span>'+trackings[i].Remarks+' on <b>'+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+'</b></span><br/><br/>';
+					htmlContent += '<b><u>'+status+'</u></b><br/><br/><span>'+trackings[i].Remarks+' on <b>'+new Date(trackings[i].TrackingUpdateDateTime).toDateString()+ ' '+new Date(trackings[i].TrackingUpdateDateTime).toLocaleTimeString()+ '</b></span><br/><br/>';
 				}
 			}
 		}

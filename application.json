@@ -1,6 +1,10 @@
 {
   "pages": [
     {
+      "id": "Directions",
+      "isDefault": false
+    },
+    {
       "id": "Delivery Tracker",
       "isDefault": false
     },
